@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Header } from './Components/Header'
 import Todos from './Components/Todos'
 import Fotter from './Components/Footer'
-import { type TodoId, type Todo as TodoType, type FilterValue, type TodoTitle } from './types'
+import { type TodoId, type Todo as TodoType, type TodoTitle, type FilterValue } from './types'
 import { TODO_FILTERS } from './consts'
 import { MagicMotion } from 'react-magic-motion'
 const mockTodo = [
@@ -27,7 +27,7 @@ const mockTodo = [
 
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState(mockTodo)
-  const [filterSelected, setFilterSelected] = useState<FilterValue>(TODO_FILTERS.SHOW_ALL)
+  const [filterSelected, setFilterSelected] = useState<any>(TODO_FILTERS.SHOW_ALL)
 
   const handleRemoveTodo = ({ id }: TodoId): void => {
     setTodos(todos.filter((todo) => todo.id !== id))
